@@ -1,0 +1,29 @@
+div, p{
+  margin: 0;
+}
+
+.data-type{
+  margin-top: 20px;
+  border: 1px #f5f5f5 solid;
+  padding: 10px;
+
+  .title{
+    margin-bottom: 10px;
+  }
+
+  .title2{
+    margin: 10px 0;
+  }
+
+  .label{
+    margin-right: 10px;
+  }
+
+  .button{
+    margin-top: 10px;
+  }
+
+  .result{
+    margin-left: 10px;
+  }
+}

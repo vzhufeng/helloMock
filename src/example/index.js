@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
 
-import Mock from "./test.js";
+import Mock from "Components/index";
 
 class App extends Component {
   render() {

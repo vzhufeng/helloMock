@@ -3,6 +3,8 @@ import React, { Component } from "react";
 import Number from "./number";
 import String from "./string";
 
+import './index.scss'
+
 export default class Mock extends Component {
   state = {
     type: "number"
