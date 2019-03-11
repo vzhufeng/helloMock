@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-var Mock = require("mockjs");
+import Mock from"mockjs";
 
 export default class Number extends Component {
   state = {
