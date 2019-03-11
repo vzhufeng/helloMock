@@ -6,6 +6,7 @@ export default class Number extends Component {
     min: 0,
     max: 100,
     result: null,
+    random: null,
     pointMin: 0,
     pointMax: 4,
   };
@@ -38,12 +39,17 @@ export default class Number extends Component {
     this.setState({ result: data.number });
   };
 
+  randomData = ()=>{
+    this.setState({ random: Mock.mock('@float(0, 1000000, 0, 8)') });
+  }
+
   render() {
-    const { min, max, result, pointMin, pointMax } = this.state;
+    const { min, max, result, random, pointMin, pointMax } = this.state;
     const {
       onChangeMin,
       onChangeMax,
       getData,
+      randomData,
       onChangePointMin,
       onChangePointMax,
     } = this;
@@ -71,6 +77,12 @@ export default class Number extends Component {
             生成
           </button>
           <span className="result">{result}</span>
+        </p>
+        <p>
+          <button className="button" onClick={randomData}>
+            随机
+          </button>
+          <span className="result">{random}</span>
         </p>
       </div>
     );

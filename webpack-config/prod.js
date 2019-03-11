@@ -7,10 +7,10 @@ const rules = require("./rules");
 const plugins = require("./plugins");
 
 module.exports = merge(base, {
-  entry: path.resolve('src', 'components', 'index.js'),
-  output: {
-    libraryTarget: 'commonjs2'
-  },
+  // entry: path.resolve('src', 'components', 'index.js'),
+  // output: {
+  //   libraryTarget: 'commonjs2'
+  // },
   // externals: [nodeExternals()],
   // 模式
   mode: "production",

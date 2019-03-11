@@ -5,7 +5,18 @@ import Mock from "Components/index";
 
 class App extends Component {
   render() {
-    return <Mock />;
+    return (
+      <div>
+        <p style={{ margin: "10px 0", textAlign: "right" }}>
+          homepage:{" "}
+          <a href="https://github.com/vzhufeng/helloMock">
+            https://github.com/vzhufeng/helloMock
+          </a>
+        </p>
+
+        <Mock />
+      </div>
+    );
   }
 }
 

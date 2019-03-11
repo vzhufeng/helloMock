@@ -1,0 +1,20 @@
+{
+  "manifest_version": 2,
+  "name": "hello-mock",
+  "version": "1.0.0",
+  "description": "方便生成mock数据",
+  "icons": {
+    "16": "icon.png",
+    "48": "icon.png",
+    "128": "icon.png"
+  },
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+  "browser_action": {
+    "default_icon": "icon.png",
+    "default_title": "hello mock"
+  },
+  "homepage_url": "https://github.com/vzhufeng/helloMock"
+}
