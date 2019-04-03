@@ -33,7 +33,7 @@ export default class Number extends Component {
 
   getData = () => {
     const { min, max, pointMin, pointMax } = this.state;
-    var data = Mock.mock({
+    let data = Mock.mock({
       [`number|${min}-${max}.${pointMin}-${pointMax}`]: 1
     });
     this.setState({ result: data.number });
