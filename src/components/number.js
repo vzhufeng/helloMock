@@ -13,12 +13,12 @@ export default class Number extends Component {
 
   onChangeMax = e => {
     const v = e.target.value;
-    this.setState({ max: v.replace(/[^\d]/g, "") });
+    this.setState({ max: v.replace(/[^\d-]/g, "") });
   };
 
   onChangeMin = e => {
     const v = e.target.value;
-    this.setState({ min: v.replace(/[^\d]/g, "") });
+    this.setState({ min: v.replace(/[^\d-]/g, "") });
   };
 
   onChangePointMin = e => {

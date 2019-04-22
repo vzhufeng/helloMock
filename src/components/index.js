@@ -4,26 +4,26 @@ import Number from "./number";
 import String from "./string";
 import Bool from "./bool";
 import Date from "./date";
-import Color from "./color";
+import Image from "./image";
 import Other from "./other";
 
 import "./index.scss";
 
 export default class Mock extends Component {
   state = {
-    type: "string"
+    type: "number"
   };
 
-  onChangeType = e => {
-    this.setState({ type: e.target.value });
+  onChangeType = v => {
+    this.setState({ type: v });
   };
 
   compMap = {
     number: <Number />,
     string: <String />,
     bool: <Bool />,
-    "date&time": <Date />,
-    "color&image": <Color />,
+    datetime: <Date />,
+    image: <Image />,
     other: <Other />
   };
 
@@ -34,15 +34,20 @@ export default class Mock extends Component {
     return (
       <div>
         <span>数据类型：</span>
-        <select value={type} onChange={onChangeType}>
-          {Object.keys(compMap).map((v, k) => {
+        {
+          Object.keys(compMap).map((v, k) => {
             return (
-              <option key={k} value={v}>
+              <div key={k} style={{ display: 'inline-block', marginRight: '10px', cursor: 'pointer' }} onClick={onChangeType.bind(this, v)}>
+                <input
+                  type="radio"
+                  value={v}
+                  checked={type === v}
+                  onChange={onChangeType.bind(this, v)} />
                 {v}
-              </option>
+              </div>
             );
-          })}
-        </select>
+          })
+        }
         {compMap[type]}
       </div>
     );

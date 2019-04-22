@@ -4,8 +4,8 @@ import { stringArr } from "./const";
 
 export default class String extends Component {
   state = {
-    min: 1,
-    max: 1,
+    min: 2,
+    max: 2,
     result: null,
     random: null,
     sentence: null,
@@ -35,8 +35,8 @@ export default class String extends Component {
     this.setState({ sentence: Mock.mock('@boolean()') ? Mock.mock('@paragraph(1, 6)') : Mock.mock('@cparagraph(1, 6)') });
   };
 
-  randomData = ()=>{
-    this.setState({ random: Mock.mock('@string(1, 50)') });
+  randomData = () => {
+    this.setState({ random: Mock.Random.string(20) });
   }
 
   render() {
@@ -61,7 +61,7 @@ export default class String extends Component {
         </p>
         <p>
           <button className="button" onClick={randomData}>
-            随机（扩展下有bug）
+            随机
           </button>
           <span className="result">{random}</span>
         </p>

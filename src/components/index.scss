@@ -1,29 +1,45 @@
-div, p{
+div,
+p {
   margin: 0;
 }
 
-.data-type{
+.data-type {
   margin-top: 20px;
-  border: 1px #f5f5f5 solid;
+  border: 1px #ddd solid;
   padding: 10px;
+  font-size: 14px;
+  line-height: 14px;
 
-  .title{
+  .title {
     margin-bottom: 10px;
   }
 
-  .title2{
+  .title2 {
     margin: 10px 0;
   }
 
-  .label{
+  .label {
     margin-right: 10px;
   }
 
-  .button{
+  .button {
     margin-top: 10px;
   }
 
-  .result{
+  .result {
     margin-left: 10px;
+  }
+
+  .color-dot {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    margin-left: 5px;
+    border: 1px solid #000;
+  }
+
+  #canvas-mock{
+    margin-top: 10px;
+    border: 1px #000 solid;
   }
 }
