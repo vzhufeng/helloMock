@@ -5,13 +5,14 @@ import String from "./string";
 import Bool from "./bool";
 import Date from "./date";
 import Image from "./image";
+import Template from "./template";
 import Other from "./other";
 
 import "./index.scss";
 
 export default class Mock extends Component {
   state = {
-    type: "number"
+    type: "image"
   };
 
   onChangeType = v => {
@@ -19,11 +20,12 @@ export default class Mock extends Component {
   };
 
   compMap = {
+    image: <Image />,
+    template: <Template />,
     number: <Number />,
     string: <String />,
     bool: <Bool />,
     datetime: <Date />,
-    image: <Image />,
     other: <Other />
   };
 

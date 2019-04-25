@@ -24,6 +24,7 @@ p {
 
   .button {
     margin-top: 10px;
+    margin-right: 10px;
   }
 
   .result {
@@ -36,6 +37,13 @@ p {
     height: 14px;
     margin-left: 5px;
     border: 1px solid #000;
+  }
+
+  .templ-input{
+    min-height: 180px;
+    width: 100%;
+    resize: none;
+    border: 1px #000 solid;
   }
 
   #canvas-mock{
