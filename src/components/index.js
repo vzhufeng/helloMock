@@ -12,7 +12,7 @@ import "./index.scss";
 
 export default class Mock extends Component {
   state = {
-    type: "image"
+    type: "template"
   };
 
   onChangeType = v => {
