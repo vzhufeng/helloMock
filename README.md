@@ -1,6 +1,8 @@
 ## helloMock
 给mockjs一个交互界面
 
+支持数字，字符串，布尔，日期时间，图片，颜色，URL， emial，IP地址等类型的mock，可以通过输入模板生成对象和数组类型的数据
+
 ## 使用方法
 git clone 该工程或者下载zip包，或者别的什么方式，拿到extension文件夹，用安装`已解压的扩展程序`的方式安装extension文件夹
 

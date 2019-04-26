@@ -27,7 +27,7 @@ export default class Boolean extends Component {
     };
   };
 
-  getData = (kind) => {
+  getData = kind => {
     const {
       numMax,
       numMin,
@@ -430,10 +430,14 @@ export default class Boolean extends Component {
         </div>
         <div style={{ flex: 1 }}>
           <p>输入示例</p>
-          <div style={{marginBottom: '10px'}}>
+          <div style={{ marginBottom: "10px" }}>
             支持两种输出格式，json格式和对象格式，支持string, number, bool,
             address, color, url, datetime, email, ip,
-            name这几种格式，属性值只能填上述值，输入其他属性值不会检测，会输出数字。对象格式输入时请勿带引号
+            name这几种格式，属性值只能填上述值，输入其他属性值不会检测，会输出数字。
+            <ul>
+              <li>对象格式输入时请勿带引号</li>
+              <li>需要输出数组结果，在根节点上使用数组类型，比如: {"[{ a: string }]"}</li>
+            </ul>
           </div>
           <div style={{ display: "flex" }}>
             <div style={{ flex: 1 }}>
