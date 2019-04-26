@@ -39,7 +39,7 @@ export default class Mock extends Component {
         {
           Object.keys(compMap).map((v, k) => {
             return (
-              <div key={k} style={{ display: 'inline-block', marginRight: '10px', cursor: 'pointer' }} onClick={onChangeType.bind(this, v)}>
+              <div key={k} className="radio" onClick={onChangeType.bind(this, v)}>
                 <input
                   type="radio"
                   value={v}

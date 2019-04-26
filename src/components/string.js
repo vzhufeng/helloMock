@@ -1,14 +1,12 @@
 import React, { Component } from "react";
 import Mock from "mockjs";
-import { stringArr } from "./const";
 
 export default class String extends Component {
   state = {
-    min: 2,
-    max: 2,
+    min: 10,
+    max: 10,
     result: null,
-    random: null,
-    sentence: null,
+    stringType: "中文"
   };
 
   onChangeMax = e => {
@@ -22,35 +20,56 @@ export default class String extends Component {
   };
 
   getData = () => {
-    const str = stringArr[Math.floor(Math.random() * stringArr.length)];
-
-    const { min, max } = this.state;
-    let data = Mock.mock({
-      [`string|${min}-${max}`]: str
+    const { min, max, stringType } = this.state;
+    this.setState({
+      result:
+        stringType === "中文"
+          ? Mock.Random.cword(+min, +max)
+          : Mock.Random.string(+min, +max)
     });
-    this.setState({ result: data.string });
   };
 
-  getSentence = () => {
-    this.setState({ sentence: Mock.mock('@boolean()') ? Mock.mock('@paragraph(1, 6)') : Mock.mock('@cparagraph(1, 6)') });
+  onChangeStringType = v => {
+    this.setState({ stringType: v });
   };
-
-  randomData = () => {
-    this.setState({ random: Mock.Random.string(20) });
-  }
 
   render() {
-    const { min, max, result, random, sentence } = this.state;
-    const { onChangeMin, onChangeMax, getData, randomData, getSentence } = this;
+    const { min, max, result, stringType } = this.state;
+    const {
+      onChangeMin,
+      onChangeMax,
+      getData,
+      onChangeStringType
+    } = this;
 
     return (
       <div className="data-type">
+        <div>
+          <span className="label">类型</span>
+          {["中文", "英文"].map((v, k) => {
+            return (
+              <div
+                key={k}
+                className="radio"
+                onClick={onChangeStringType.bind(this, v)}
+              >
+                <input
+                  type="radio"
+                  value={v}
+                  checked={stringType === v}
+                  onChange={onChangeStringType.bind(this, v)}
+                />
+                {v}
+              </div>
+            );
+          })}
+        </div>
         <p>
-          <span className="label">最小重复数</span>
+          <span className="label">最小长度</span>
           <input type="text" value={min} onChange={onChangeMin} />
         </p>
         <p>
-          <span className="label">最大重复数</span>
+          <span className="label">最大长度</span>
           <input type="text" value={max} onChange={onChangeMax} />
         </p>
         <p>
@@ -58,18 +77,6 @@ export default class String extends Component {
             生成
           </button>
           <span className="result">{result}</span>
-        </p>
-        <p>
-          <button className="button" onClick={randomData}>
-            随机
-          </button>
-          <span className="result">{random}</span>
-        </p>
-        <p>
-          <button className="button" onClick={getSentence}>
-            长文本
-          </button>
-          <span className="result">{sentence}</span>
         </p>
       </div>
     );

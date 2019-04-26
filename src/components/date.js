@@ -9,20 +9,18 @@ export default class DateComp extends Component {
   };
 
   getUnix = () => {
-    let now = new Date().getTime();
-    let data = Mock.mock({
-      [`number|${now - 500000000000}-${now}`]: 1
-    });
-    let info = new Date(data.number);
-    this.setState({ resultUnix: `${data.number} ${info.getFullYear()}-${info.getMonth()+1}-${info.getDate()} ${info.getHours()}:${info.getMinutes()}:${info.getSeconds()}` });
+    const now = new Date().getTime();
+    const data = Mock.Random.integer(+now - 500000000000, +now);
+    const info = new Date(data);
+    this.setState({ resultUnix: `${data} ${info.getFullYear()}-${info.getMonth()+1}-${info.getDate()} ${info.getHours()}:${info.getMinutes()}:${info.getSeconds()}` });
   };
 
   getDate = () => {
-    this.setState({ resultDate: Mock.mock('@date()') });
+    this.setState({ resultDate: Mock.Random.date() });
   };
 
   getTime = () => {
-    this.setState({ resultTime: Mock.mock('@time()') });
+    this.setState({ resultTime: Mock.Random.time() });
   };
 
   render() {

@@ -12,32 +12,32 @@ export default class Boolean extends Component {
   };
 
   getEmail = () => {
-    const email = Mock.mock('@email()');
+    const email = Mock.Random.email();
     this.setState({ email });
   }
 
   getCname = () => {
-    const cname = Mock.mock('@cname()');
+    const cname = Mock.Random.cname();
     this.setState({ cname });
   }
 
   getCity = () => {
-    const city = Mock.mock('@city(true)');
+    const city = Mock.Random.city(true);
     this.setState({ city });
   }
 
   getIp = () => {
-    const ip = Mock.mock('@ip()');
+    const ip = Mock.Random.ip();
     this.setState({ ip });
   }
 
   getColor = () => {
-    const color = Mock.mock('@color()');
+    const color = Mock.Random.color();
     this.setState({ color });
   };
 
   getUrl = () => {
-    const url = Mock.mock('@url()');
+    const url = Mock.Random.url();
     this.setState({ url });
   };
 

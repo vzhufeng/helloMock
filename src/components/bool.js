@@ -7,7 +7,7 @@ export default class Boolean extends Component {
   };
 
   getData = () => {
-    this.setState({ result: JSON.stringify(Mock.mock('@boolean()')) });
+    this.setState({ result: JSON.stringify(Mock.Random.boolean()) });
   };
 
   render() {

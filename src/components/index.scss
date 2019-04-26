@@ -9,6 +9,7 @@ p {
   padding: 10px;
   font-size: 14px;
   line-height: 14px;
+  word-break: break-all;
 
   .title {
     margin-bottom: 10px;
@@ -39,15 +40,25 @@ p {
     border: 1px solid #000;
   }
 
-  .templ-input{
+  .templ-input {
     min-height: 180px;
     width: 100%;
     resize: none;
     border: 1px #000 solid;
   }
 
-  #canvas-mock{
+  .templ-config {
+    margin-top: 10px;
+  }
+
+  #canvas-mock {
     margin-top: 10px;
     border: 1px #000 solid;
   }
+}
+
+.radio {
+  display: inline-block;
+  margin-right: 10px;
+  cursor: pointer;
 }

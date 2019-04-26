@@ -6,7 +6,6 @@ export default class Number extends Component {
     min: 0,
     max: 100,
     result: null,
-    random: null,
     pointMin: 0,
     pointMax: 4,
   };
@@ -33,23 +32,15 @@ export default class Number extends Component {
 
   getData = () => {
     const { min, max, pointMin, pointMax } = this.state;
-    let data = Mock.mock({
-      [`number|${min}-${max}.${pointMin}-${pointMax}`]: 1
-    });
-    this.setState({ result: data.number });
+    this.setState({ result: Mock.Random.float(+min, +max, +pointMin, +pointMax) });
   };
 
-  randomData = ()=>{
-    this.setState({ random: Mock.mock('@float(0, 1000000, 0, 8)') });
-  }
-
   render() {
-    const { min, max, result, random, pointMin, pointMax } = this.state;
+    const { min, max, result, pointMin, pointMax } = this.state;
     const {
       onChangeMin,
       onChangeMax,
       getData,
-      randomData,
       onChangePointMin,
       onChangePointMax,
     } = this;
@@ -65,11 +56,11 @@ export default class Number extends Component {
           <input type="text" value={max} onChange={onChangeMax} />
         </p>
         <p>
-          <span className="label">小数位数下限</span>
+          <span className="label">小数点最小位数</span>
           <input type="text" value={pointMin} onChange={onChangePointMin} />
         </p>
         <p>
-          <span className="label">小数位数上限</span>
+          <span className="label">小数点最大位数</span>
           <input type="text" value={pointMax} onChange={onChangePointMax} />
         </p>
         <p>
@@ -77,12 +68,6 @@ export default class Number extends Component {
             生成
           </button>
           <span className="result">{result}</span>
-        </p>
-        <p>
-          <button className="button" onClick={randomData}>
-            随机
-          </button>
-          <span className="result">{random}</span>
         </p>
       </div>
     );
